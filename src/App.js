@@ -2,20 +2,19 @@
 
 import React from "react";
 import Counter from "./Counter";
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
 import { DECREASE, RESET, INCREASE } from "./actions";
-import reducer from "./reducers";
+import countReducer from "./countReducer";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-//setup initial state
-const defaultState = {
-  count: 0,
-  name: "john"
-};
-// setup reducer
 
 // setup store
-const store = createStore(reducer, defaultState, composeWithDevTools());
+const store = createStore(
+  combineReducers({
+    countState: countReducer
+  }),
+  composeWithDevTools()
+);
 
 const App = () => {
   return (

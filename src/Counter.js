@@ -22,10 +22,10 @@ function Counter({ name, count, increase, decrease, reset }) {
   );
 }
 function mapStateToProps(state) {
-  return { count: state.count, name: state.name };
+  return { count: state.countState.count, name: state.countState.name };
 }
 function mapDispatchToProps(dispatch, ownProps) {
-  console.log(ownProps);
+  // console.log(ownProps);
 
   return {
     increase: () => dispatch({ type: INCREASE }),

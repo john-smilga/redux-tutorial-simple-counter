@@ -1,7 +1,9 @@
 import { DECREASE, RESET, INCREASE } from "./actions";
-export default function reducer(state, action) {
-  console.log({ state, action });
-
+const defaultState = {
+  count: 0,
+  name: "john"
+};
+export default function reducer(state = defaultState, action) {
   switch (action.type) {
     case DECREASE:
       return { ...state, count: state.count - 1 };
