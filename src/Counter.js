@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { DECREASE, RESET, INCREASE } from "./actions";
+import { DECREASE, RESET, INCREASE, MODAL_OPEN } from "./actions";
+import { modalOpen } from "./actions";
 function Counter({ name, count, increase, decrease, reset }) {
   return (
     <div className="container">
@@ -30,7 +31,19 @@ function mapDispatchToProps(dispatch, ownProps) {
   return {
     increase: () => dispatch({ type: INCREASE }),
     decrease: () => dispatch({ type: DECREASE }),
-    reset: () => dispatch({ type: RESET })
+    reset: () => {
+      dispatch({ type: RESET });
+      dispatch(
+        modalOpen(
+          "susan",
+          " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam sed quis totam saepe mollitia tempore, modi eveniet repellat! Odio, non!"
+        )
+      );
+      // dispatch({
+      //   type: MODAL_OPEN,
+      //   payload: { name: "bob", text: "hello there user" }
+      // });
+    }
   };
 }
 
