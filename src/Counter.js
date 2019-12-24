@@ -5,19 +5,21 @@ import { modalOpen } from "./actions";
 function Counter({ name, count, increase, decrease, reset }) {
   return (
     <div className="container">
-      <h1>counter</h1>
-      <h2>{name}</h2>
-      <p className="counter">{count}</p>
-      <div className="buttons">
-        <button type="button" className="btn" onClick={decrease}>
-          decrease
-        </button>
-        <button type="button" className="btn" onClick={reset}>
-          reset
-        </button>
-        <button type="button" className="btn" onClick={increase}>
-          increase
-        </button>
+      <div>
+        <h1>counter</h1>
+        <h2>{name}</h2>
+        <p className="counter">{count}</p>
+        <div className="buttons">
+          <button type="button" className="btn" onClick={decrease}>
+            decrease
+          </button>
+          <button type="button" className="btn" onClick={reset}>
+            reset
+          </button>
+          <button type="button" className="btn" onClick={increase}>
+            increase
+          </button>
+        </div>
       </div>
     </div>
   );

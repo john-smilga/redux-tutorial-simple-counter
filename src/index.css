@@ -90,17 +90,13 @@ Counter
 ======
 */
 
-body {
+.container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.container {
   text-align: center;
   text-transform: capitalize;
-  width: var(--smallWidth);
-  max-width: 35rem;
 }
 .container h1 {
   font-size: 3rem;
